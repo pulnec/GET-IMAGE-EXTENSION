@@ -2,7 +2,8 @@
   "name": "imagegenerator",
   "displayName": "Image URL Generator",
   "description": "Search and get the URL of an image, just searching from the input of the extension :)",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "icon": "images/icon.png",
   "publisher": "GetURLImage",
   "engines": {
     "vscode": "^1.75.0"
@@ -19,13 +20,22 @@
           "command": "imagegenerator.startImageRequest",
           "group": "imagegenerator",
           "when": "editorTextFocus"
+        },
+        {
+          "command": "imagegenerator.randomImageRequest",
+          "group": "imagegenerator",
+          "when": "editorTextFocus"
         }
       ]
     },
     "commands": [
       {
         "command": "imagegenerator.startImageRequest",
-        "title": "Request Image"
+        "title": "Open Search Image"
+      },
+      {
+        "command": "imagegenerator.randomImageRequest",
+        "title": "Get Random Image"
       }
     ]
   },
