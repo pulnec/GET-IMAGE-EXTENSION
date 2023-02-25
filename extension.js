@@ -131,13 +131,14 @@ function activate(context) {
 
           panel.webview.html = getHtmlForWebview(
             panel.webview,
-            response.data.hits
+            response.data.hits,
+            value
           );
         });
     }
   );
 
-  const getHtmlForWebview = (webview, list) => {
+  const getHtmlForWebview = (webview, list, query) => {
     const extensionUri = context.extensionUri;
     // Local path to main script run in the webview
     const scriptPathOnDisk = vscode.Uri.joinPath(
@@ -169,14 +170,14 @@ function activate(context) {
     const nonce = getNonce();
     const strImg = list.reduce((stringImg, img) => {
       return (
-        `
+        `<div class="boxImage">
         <img 
           class="imageSelect"
           src="${img.previewURL}" 
           alt="${img.tags}" 
           data-id:"${img.id}" 
           width="200" height="200" 
-        /></br> ` + stringImg
+        /></div>` + stringImg
       );
     }, "");
 
@@ -192,10 +193,12 @@ function activate(context) {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
 				<link href="${stylesResetUri}" rel="stylesheet">
 				<link href="${stylesMainUri}" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 				<title>Listado de Imagenes</title>
 			</head>
 			<body>
-        <div>
+        <h1>Search Result: ${query}</h1>
+        <div class="containerImg">
           ${strImg}
         </div>
 				<script nonce="${nonce}" src="${scriptUri}"></script>
