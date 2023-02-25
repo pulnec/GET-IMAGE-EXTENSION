@@ -20,4 +20,6 @@ Step 3: Select the image
 
 ## Demo
 
+![demo](https://i.ibb.co/sVmY9V8/ezgif-com-video-to-gif-3.gif)
+
 ![demo](https://i.ibb.co/hg0RDkf/ezgif-com-video-to-gif-1.gif)
