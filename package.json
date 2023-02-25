@@ -2,7 +2,7 @@
   "name": "imagegenerator",
   "displayName": "Image URL Generator",
   "description": "Search and get the URL of an image, just searching from the input of the extension :)",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "icon": "images/icon.png",
   "publisher": "GetURLImage",
   "engines": {
